@@ -18,14 +18,16 @@
       <div class="dropdown">
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <label for="" tabindex="0" class="navbar-item">{data.session.user.githubUsername}</label>
-        <div class="dropdown-menu mt-3 max-w-[160px]">
-          <div class="dropdown-item">
-            <form action="/signout" method="post" use:enhance><button>Sign out</button></form>
+        <div class="dropdown-menu mt-3 max-w-[160px] p-0">
+          <div class="dropdown-item p-0">
+            <form action="/signout" method="post" use:enhance>
+              <button class="w-full p-3 text-left">Sign out</button>
+            </form>
           </div>
         </div>
       </div>
     {:else}
-    <a href="/login" class="navbar-item">Login</a>
+      <a href="/login" class="navbar-item">Login</a>
     {/if}
   </div>
 </nav>
