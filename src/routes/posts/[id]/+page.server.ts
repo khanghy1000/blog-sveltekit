@@ -2,7 +2,11 @@ import { prisma } from '$lib/server/prisma';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-export const load = (async ({ params }) => {
+export const load = (async ({ params, setHeaders }) => {
+  setHeaders({
+    'Cache-Control': 'max-age=0, s-maxage=60'
+  })
+
   const post = await prisma.post.findUnique({
     where: {
       id: params.id
