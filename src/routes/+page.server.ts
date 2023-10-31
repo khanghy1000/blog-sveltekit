@@ -5,6 +5,10 @@ export const load = (async ({ setHeaders }) => {
   setHeaders({
     'Cache-Control': 'max-age=0, s-maxage=60'
   });
-  const posts = await prisma.post.findMany();
+  const posts = await prisma.post.findMany({
+    orderBy: {
+      createdAt: 'desc'
+    }
+  });
   return { posts };
 }) satisfies PageServerLoad;
