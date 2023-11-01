@@ -15,6 +15,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Blog</title>
+</svelte:head>
+
 <div class="max-w-2xl mx-auto p-5">
   {#each data?.posts as post}
     <div>

@@ -5,6 +5,10 @@
   export let form: ActionData;
 </script>
 
+<svelte:head>
+  <title>New blog</title>
+</svelte:head>
+
 <div class="p-5">
   <form
     method="post"

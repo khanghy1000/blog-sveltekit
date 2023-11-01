@@ -6,6 +6,10 @@
   export let data: PageServerData;
 </script>
 
+<svelte:head>
+  <title>{data.post.title}</title>
+</svelte:head>
+
 <div class="p-5">
   <div class="max-w-2xl mx-auto">
     <h3 class="text-3xl font-semibold mb-1">{data.post.title}</h3>

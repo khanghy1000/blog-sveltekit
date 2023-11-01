@@ -6,6 +6,10 @@
   export let data: PageServerData;
 </script>
 
+<svelte:head>
+  <title>Update</title>
+</svelte:head>
+
 <div class="p-5">
   <form
     method="post"

@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Login</title>
+</svelte:head>
+
 <div class="p-5">
   <div
     class="mx-auto flex w-full max-w-lg flex-col rounded-xl border border-border bg-backgroundSecondary p-5 sm:p-10 my-5"
