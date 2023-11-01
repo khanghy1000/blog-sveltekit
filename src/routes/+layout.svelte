@@ -2,8 +2,25 @@
   import { enhance } from '$app/forms';
   import type { LayoutServerData } from './$types';
   import './index.css';
+  import NProgress from 'nprogress';
+  import { navigating } from '$app/stores';
+  import './nprogress.css';
 
   export let data: LayoutServerData;
+
+  NProgress.configure({
+    minimum: 0.16,
+    showSpinner: false
+  });
+
+  $: {
+    if ($navigating) {
+      NProgress.start();
+    }
+    if (!$navigating) {
+      NProgress.done();
+    }
+  }
 </script>
 
 <nav class="navbar shadow-md">
