@@ -1,6 +1,7 @@
 import { redirect, type Actions, fail } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { prisma } from '$lib/server/prisma';
+import { stripHtmlTags } from '$lib/utils/stripHtmlTags';
 
 export const load = (async ({ locals }) => {
   const session = await locals.auth.validate();
@@ -17,10 +18,10 @@ export const actions: Actions = {
     const title = String(data.get('title'));
     const content = String(data.get('content'));
 
-    if (!title || !content) {
+    if (!title || !stripHtmlTags(content)) {
       const errors: { title?: string; content?: string } = {};
       if (!title) errors.title = 'Title is required';
-      if (!content) errors.content = 'Content is required';
+      if (!stripHtmlTags(content)) errors.content = 'Content is required';
 
       return fail(400, {
         title,
@@ -37,6 +38,6 @@ export const actions: Actions = {
       }
     });
 
-    throw redirect(302, `/posts/${post.id}`)
+    throw redirect(302, `/posts/${post.id}`);
   }
 };

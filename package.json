@@ -14,6 +14,7 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.20.4",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/nprogress": "^0.2.2",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
@@ -34,11 +35,15 @@
   },
   "type": "module",
   "dependencies": {
-    "nprogress": "^0.2.0",
     "@lucia-auth/adapter-prisma": "^3.0.2",
     "@lucia-auth/oauth": "^3.3.1",
     "@prisma/client": "^5.5.2",
+    "@tiptap/core": "^2.1.12",
+    "@tiptap/extension-placeholder": "^2.1.12",
+    "@tiptap/pm": "^2.1.12",
+    "@tiptap/starter-kit": "^2.1.12",
     "lucia": "^2.7.2",
+    "nprogress": "^0.2.0",
     "rippleui": "^1.12.1",
     "svelte-progress-bar": "^3.0.2"
   }
