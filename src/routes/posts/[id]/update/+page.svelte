@@ -32,7 +32,7 @@
       },
       editorProps: {
         attributes: {
-          class: 'prose dark:prose-invert focus:outline-none p-5'
+          class: 'prose dark:prose-invert focus:outline-none p-5 max-w-none'
         }
       }
     });

@@ -27,6 +27,6 @@
       </div>
     {/if}
 
-    <div class="prose dark:prose-invert">{@html data.post.content}</div>
+    <div class="prose dark:prose-invert max-w-none">{@html data.post.content}</div>
   </div>
 </div>
